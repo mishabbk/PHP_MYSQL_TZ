@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/../vendor/autoload.php';
+
+use App\Command\CanTesterCommand;
+use App\Command\UserTesterCommand;
+use App\Command\CanManagerCommand;
+use App\Command\UserManagerCommand;
+use App\Command\CanDesignerCommand;
+use App\Command\CanDeveloperCommand;
+use App\Command\UserDesignerCommand;
+use App\Command\UserDeveloperCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+$app->add(new UserDeveloperCommand());
+$app->add(new UserDesignerCommand());
+$app->add(new UserTesterCommand());
+$app->add(new UserManagerCommand());
+$app->add(new CanDeveloperCommand());
+$app->add(new CanDesignerCommand());
+$app->add(new CanTesterCommand());
+$app->add(new CanManagerCommand());
+$app->run();
